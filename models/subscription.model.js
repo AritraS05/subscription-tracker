@@ -15,17 +15,17 @@ const subscriptionSchema = new mongoose.Schema({
     },
     currency:{
         type: String,
-        enum:{'USD':1,'INR':2,'EUR':3},
+        enum:['USD','INR','EUR'],
         default:'INR',
     },
     frequency:{
         type: String,
-        enum:{'weekly':1, 'monthly':2, 'yearly':3},
+        enum:['weekly', 'monthly', 'yearly'],
         default:'monthly',
     },
     category:{
         type:String,
-        enum:{'sports':1,'news':2,'entertainment':3,'lifestyle':4,'business':5},
+        enum:['sports','news','entertainment','lifestyle','business'],
         default:'entertainment',
         required:true,
     },
@@ -36,7 +36,7 @@ const subscriptionSchema = new mongoose.Schema({
     },
     status:{
         type:String,
-        enum:{'active':1,'canceled':2,'expired':3},
+        enum:['active','canceled','expired'],
     },
     startDate:{
         type:Date,
